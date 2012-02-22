@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	      android:orientation="vertical"
+	      android:layout_height="wrap_content"
+	      android:layout_width="fill_parent"
+	      android:paddingLeft="5dip"
+	      android:paddingRight="5dip">
+  <LinearLayout android:orientation="horizontal"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_margin="15dip">
+    <TextView android:id="@+id/timer_interval_text"
+	      android:layout_height="wrap_content"
+	      android:layout_width="wrap_content"
+	      android:layout_marginRight="10dip"
+	      android:textSize="30dip" />
+    <Spinner android:id="@+id/timer_interval_scale"
+	     android:layout_height="wrap_content"
+	     android:layout_width="wrap_content"
+	     android:entried="@array/hours_days" />
+  </LinearLayout>
+  <SeekBar android:id="@+id/timer_interval_seekbar"
+	   android:layout_height="wrap_content"
+	   android:layout_width="fill_parent"
+	   android:layout_margin="15dip"
+	   android:max="1440" />
+</LinearLayout>

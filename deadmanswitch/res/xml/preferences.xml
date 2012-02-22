@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * TODO put license info here
+ */
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <PreferenceCategory android:title="Timer Settings">
+    <org.marchhare.deadmanswitch.preferences.TimerIntervalPreference
+	android:defaultValue="4"
+	android:key="pref_set_timer_interval"
+	android:summary="The amount of time in hours before the switch activates"
+	android:title="Set Timer Interval" />
+    <org.marchhare.deadmanswitch.preferences.TimerMarginOfErrorPreference
+	android:defaultValue="15"
+	android:key="pref_timer_margin_of_error"
+	android:summary="The amount of time in minutes that you would like tasks to be delayed once the switch activates"
+	android:title="Set Timer Margin of Error" />
+  </PreferenceCategory>
+  <PreferenceCategory android:title="Passphrase Settings">
+    <CheckBoxPreference android:defaultValue="false"
+			android:key="pref_disable_passphrase"
+			android:summary="Check to disable passphrase for deactivating the switch. NOT RECOMMENDED."
+			android:title="Disable Passphrase" />
+    <Preference android:key="pref_clear_stored_passphrase"
+		android:summary="Clear my stored passphrase"
+		android:title="Clear Passphrase" />
+    <Preference android:key="pref_change_passphrase"
+		android:summary="Change my passphrase"
+		android:title="Change Passphrase" />
+  </PreferenceCategory>
+  <PreferenceCategory android:title="Notification Settings">
+    <RingtonePreference android:layout="?android:attr/preferenceLayoutChild"
+			android:key="pref_ringtone"
+			android:title="Select Ringtone"
+			android:ringtoneType="notification"
+			android:defaultValue="content://settings/system/notification_sound" />
+    <CheckBoxPreference android:defaultValue="true"
+			android:key="pref_vibrate"
+			android:title="Vibrate"
+			android:summary="Also vibrate when notified" />
+  </PreferenceCategory>
+  <PreferenceCategory android:title="Incognito Mode Settings">
+    <CheckBoxPreference android:defaultValue="false"
+			android:key="pref_enable_incognito_mode"
+			android:title="Enable Incognito Mode"
+			android:summary="Make the app look like a harmless FTP server" />
+  </PreferenceCategory>
+</PreferenceScreen>
