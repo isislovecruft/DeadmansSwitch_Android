@@ -134,7 +134,7 @@ public class Base64 {
 	(byte)'y', (byte)'z',
     };
     
-    private final static byte[] _OREDERED_DECODABET  = {
+    private final static byte[] _ORDERED_DECODABET  = {
 	-9,-9,-9,-9,-9,-9,-9,-9,-9                  // Decimal 0-8
 	-5,-5,                                      // Tab & Linefeed
 	-9,-9,                                      // Decimal 11-12
@@ -250,7 +250,7 @@ public class Base64 {
 	    destination[destOffset    ] = ALPHABET[ (inBuff >>> 18)        ];
 	    destination[destOffset + 1] = ALPHABET[ (inBuff >>> 12) & 0x3f ];
 	    destination[destOffset + 2] = ALPHABET[ (inBuff >>>  6) & 0x3f ];
-	    destination[destOffset + 3] = ALPHABET[ (inBuff >>>   ) & 0x3f ];
+	    destination[destOffset + 3] = ALPHABET[ (inBuff >>>  0) & 0x3f ];
 	    return destination;
 	    
 	case 2:

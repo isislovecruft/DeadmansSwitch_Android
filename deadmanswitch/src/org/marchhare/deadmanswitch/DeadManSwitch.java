@@ -18,9 +18,8 @@ package org.marchhare.deadmanswitch;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import org.thoughtcrime.securesms.crypto.MasterSecretUtil;
-
 import org.marchhare.deadmanswitch.crypto.MasterSecret;
+import org.marchhare.deadmanswitch.crypto.MasterSecretUtil;
 import org.marchhare.deadmanswitch.service.KeyCachingService;
 
 import android.app.Activity;
@@ -84,17 +83,13 @@ public class DeadManSwitch extends Activity {
 	final Button aliveButton = (Button)findViewById(R.id.alive_button);
 	aliveButton.setOnClickListener(new View.OnClickListener() {
 		public void onClick(View v) {
-		    /** Check that they are pressing the intended button.*/
 		    if (v == aliveButton) {
-			/** Grab passphrase from user input.*/
 			String plaintext = alivePasswd.getText().toString();
-			//NEED WAY TO CATCH BLANK PASSWORD
 			
 			/** Convert to byte array, needed for hashing.*/
 			byte[] plaintextbytes = plaintext.getBytes();
 			String sha256hash;
 			try {
-			    /** Use SHA-256 */
 			    MessageDigest md = MessageDigest.getInstance("SHA-256");
 			    md.reset();
 			    md.update(plaintextbytes);
@@ -112,13 +107,11 @@ public class DeadManSwitch extends Activity {
 					Toast.makeText(DeadManSwitch.this, "Authentication successful", Toast.LENGTH_LONG).show();
 				} else {
 					Toast.makeText(DeadManSwitch.this, "Authentication failure", Toast.LENGTH_LONG).show();
-					//WAY TO SET LIMIT ON TRIES
-					//AFTER THREE TRIES DEADMAN'S SWITCH ACTIVATES ANYWAY?
 				}
 			    }
 			} catch (NoSuchAlgorithmException nsae) {
 			};
-		    }; //closes "if (v == aliveButton)"
+		    };
 		};
 	    });
     };
