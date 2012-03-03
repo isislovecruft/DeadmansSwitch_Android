@@ -18,9 +18,10 @@ package org.marchhare.deadmanswitch;
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import org.thoughtcrime.securesms.crypto.MasterSecret;
 import org.thoughtcrime.securesms.crypto.MasterSecretUtil;
-import org.thoughtcrime.securesms.service.KeyCachingService;
+
+import org.marchhare.deadmanswitch.crypto.MasterSecret;
+import org.marchhare.deadmanswitch.service.KeyCachingService;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
